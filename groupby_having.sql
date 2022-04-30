@@ -13,10 +13,24 @@ GROUP BY designation;
 -- group by -> to form formal groups
 --          -> to apply aggregation on these groups
 
+--         (It always filtering group wise)
 -- Having: it is always used with a aggregate function
 --         used to add condition on group by(group data)
 --         therefore it comes after group by statement
 
+-- Que: designation tell me ki highest salary kya hai ??
+-- but ignore where the highest salary is less then 3000?
+
 SELECT designation FROM employee
 GROUP BY designation
 HAVING MAX(Salary) > 3000;
+
+-- Where : It is used to filter row wise data
+
+-- Que: designation tell me ki highest salary kya hai ??
+-- but ignore where the highest salary is less then 3000?
+-- i also don't want data of deptcode 20
+SELECT designation FROM employee
+GROUP BY designation
+HAVING MAX(Salary) > 3000;
+
