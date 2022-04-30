@@ -18,7 +18,7 @@ GROUP BY designation;
 --         used to add condition on group by(group data)
 --         therefore it comes after group by statement
 
--- Que: designation tell me ki highest salary kya hai ??
+-- Que1: designation tell me ki highest salary kya hai ??
 -- but ignore where the highest salary is less then 3000?
 
 SELECT designation FROM employee
@@ -27,10 +27,23 @@ HAVING MAX(Salary) > 3000;
 
 -- Where : It is used to filter row wise data
 
--- Que: designation tell me ki highest salary kya hai ??
+-- Que2: designation tell me ki highest salary kya hai ??
 -- but ignore where the highest salary is less then 3000?
 -- i also don't want data of deptcode 20
-SELECT designation FROM employee
+SELECT designation,
+Count(designation) as "count per dep",
+MAX(Salary) as "Max Salary" FROM employee
+WHERE DEPTCODE <> 20
+-- i will make group on the basis of given column
 GROUP BY designation
-HAVING MAX(Salary) > 3000;
+-- to put condition on group by ka output uspe condition lagane ke kaam
 
+-- Que3: designation tell me ki highest salary kya hai ??
+-- i also don't want data of Salesman
+SELECT designation,
+COUNT(designation) as "count per dep",
+MAX(Salary) as "Max Salary" FROM employee
+WHERE designation <> "SALESMAN"
+-- i will make group on the basis of given column
+GROUP BY designation
+-- to put condition on group by ka output uspe condition lagane ke kaam
