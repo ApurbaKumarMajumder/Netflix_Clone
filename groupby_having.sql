@@ -47,3 +47,24 @@ WHERE designation <> "SALESMAN"
 -- i will make group on the basis of given column
 GROUP BY designation
 -- to put condition on group by ka output uspe condition lagane ke kaam
+
+-- Que4: designation tell me ki highest salary kya hai ??
+-- i also don't want data of Salesman
+-- and max salaries dept wise should be greater than 3000
+SELECT designation,
+COUNT(designation) as "count per dep",
+MAX(Salary) as "Max Salary" FROM employee
+WHERE designation <> "SALESMAN"
+-- i will make group on the basis of given column
+GROUP BY designation
+-- to put condition on group by ka output uspe condition lagane ke kaam
+HAVING MAX(Salary) > 3000;
+
+-- Que5: give me avg salary of the dept wise where number of employees is more than 2 in in increasing order.
+
+SELECT DEPTCODE, AVG(Salary), COUNT(DEPTCODE)
+FROM employee
+GROUP BY DEPTCODE
+HAVING COUNT(DEPTCODE) > 2
+ORDER BY AVG(Salary)
+
