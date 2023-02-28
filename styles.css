@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
 }
 
@@ -17,7 +18,7 @@ body {
     justify-content: space-between;
     padding: 2% 5%;
     z-index: 10;
-
+    display: flex;
 }
 
 .navbar__brand {
@@ -44,6 +45,7 @@ body {
     border: 1px solid white;
     padding: 0.4rem;
     background: rgba(0, 0, 0, 0.4);
+    padding: 10px 5px;
 }
 
 .signin__button {
@@ -54,3 +56,9 @@ body {
     padding: 10px 20px;
     font-size: 18px;
 }
+
+.navbar__nav__items {
+    display: flex;
+    gap: 30px;
+}
+
