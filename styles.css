@@ -21,5 +21,36 @@ body {
 }
 
 .navbar__brand {
-    
+    width: 150px;
+    height: 100%;
+}
+
+.brand__logo {
+    width: 100%;
+    height: 100%;
+}
+
+.language__drop__down {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.language__drop__down:focus {
+    outline: none;
+}
+
+.dropdown__container {
+    border: 1px solid white;
+    padding: 0.4rem;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.signin__button {
+    background-color: #E50914;
+    border: 1px solid #E50914;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
 }
